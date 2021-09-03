@@ -1,4 +1,4 @@
-# ME 701 -- Homework 1 -- Your Name Here
+# ME 701 -- Homework 1 -- Ezekial Jimenez
 
 ## Instructions
 
@@ -27,12 +27,9 @@ or Octave).
 
 ### Solution
 
-Write your solution here.  Note, in the past, we've used a full, graphical
-version of Linux.  With WSL, you probably don't have as direct a path for
-exploring software in the Software Manager.  However, use the power of
-Google (or AskJeeves) to explore what sorts of open-source software is out
-there for technical or other applications.
-
+I have used 3D modeling software like SolidWorks or CAD to come up with designs for 3D printing. 
+There is an open-source software called Blender that is used similarly. It began development in 1994
+and has been updated and maintained since then by a community of developers.
 
 ## Problem 3 -- Your CPU
 
@@ -49,10 +46,10 @@ using `ls > directory_contents.txt` to dump the contents of a directory to a fil
 To display CPU information, I used the following command:
 
 ```bash
-ls -al # <--- that's not right, but it shows you how to include
-       #      code in Markdown!
+cat /proc/cpuinfo
 ```
-
+The processor speed is shown at the end of the model name field, and 
+the number of cores is shown after the cpu cores field.
 ## Problem 4 -- Resource Hogs
 
 ### Statement
@@ -63,7 +60,13 @@ in your writeup.
 
 ### Solution
 
+To show the list of top memory and processing users, I endered the following command:
 
+```bash
+ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head
+```
+I found this at the following website: https://www.tecmint.com/find-linux-processes-memory-ram-cpu-usage/
+The command shows the highest usage programs in descending order.
 
 ## Problem 5 -- `bash`
 
@@ -74,3 +77,14 @@ Where is `bash` located on your Linux system?  And what version of
 determine this information.
 
 ### Solution
+
+`bash` is in the location /usr/bin/bash 
+I found this by typing: 
+```bash
+which bash
+```
+I am using version 5.0.17(1) of `bash`
+I found this by typing the following command:
+```bash
+bash --version
+```
